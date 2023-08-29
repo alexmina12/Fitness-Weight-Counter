@@ -1,0 +1,87 @@
+.container {
+  width: 100%;
+  margin: auto;
+}
+
+.headerContainer {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  position: sticky;
+  top: 0;
+  z-index: 1;
+}
+
+.table {
+  border-collapse: collapse;
+  width: 80%;
+  margin: auto;
+}
+
+.table th:not(.button) {
+  width: 10%;
+  padding: 4px;
+  text-align: center;
+  font-weight: bold;
+  /* border: 1px solid #ddd; */
+  color: blue;
+  background-color: white;
+}
+
+.table th .button {
+  background-color: red;
+}
+
+.button {
+  width: 10%;
+}
+
+.table td:not(.buttonRemove) {
+  width: 100px;
+  border: 1px solid #ddd;
+  padding: 8px;
+  text-align: center;
+}
+
+.table input {
+  border: none;
+  width: 90%;
+  padding: 4px;
+  font-size: 14px;
+  background-color: transparent;
+  text-align: center;
+}
+
+.buttonRemove {
+  width: 10%;
+  padding: 8px;
+  border: none;
+  text-align: center;
+}
+
+.remove {
+  background-color: #ff6b6b;
+  color: white;
+  border: none;
+  padding: 5px;
+  cursor: pointer;
+  font-size: 16px;
+}
+
+.remove:hover {
+  background-color: #f54848;
+}
+
+.create {
+  background-color: #66bb6a;
+  color: white;
+  border: none;
+  font-size: 16px;
+  cursor: pointer;
+  text-align: center;
+  padding: 5px 10px;
+}
+
+.create:hover {
+  background-color: #4caf50;
+}

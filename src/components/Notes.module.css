@@ -1,0 +1,28 @@
+.table_Notes {
+  border-collapse: collapse;
+  width: 100%;
+  margin: auto;
+}
+
+.table_Notes th {
+  background-color: #f2f2f2;
+  border: 1px solid #ddd;
+  padding: 8px;
+  text-align: center;
+  width: 25%;
+}
+
+.table_Notes td {
+  border: 1px solid #ddd;
+  padding: 8px;
+  text-align: center;
+}
+
+.table_Title {
+  color: blue;
+  font-weight: bold;
+}
+
+.table_Data {
+  font-weight: normal;
+}

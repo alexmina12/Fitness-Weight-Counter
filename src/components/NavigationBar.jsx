@@ -19,12 +19,12 @@ const Layout = () => {
         </li>
         <li className={styles.nav}>
           <Link to="/Notes">
-            <button>Your notes</button>
+            <button>Current Done Workouts</button>
           </Link>
         </li>
         <li className={styles.nav}>
           <Link to="/NewNotes">
-            <button>Create new note</button>
+            <button>Create Workout for Today</button>
           </Link>
         </li>
         <li className={styles.nav}>

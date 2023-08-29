@@ -15,38 +15,58 @@ hr {
 
 .info {
   width: auto;
-
   max-width: 1000px;
   word-wrap: break-word;
   background-color: gray;
   display: grid;
-  grid-template-columns: minmax(200px, 2fr) 2fr;
+  grid-template-columns: 1000px;
   grid-template-rows: 200px 200px;
   margin: auto;
   border-radius: 0 0 50px 50px;
 }
 
-.leftPart {
-  grid-row: 1/4;
+.topPart {
+  grid-row: 1/2;
+  background-color: rgba(228, 209, 209, 0.945);
+  border: solid black 1px;
 }
 
-.rightBottomPart {
-  grid-column: 2/4;
+.bottomPart {
+  grid-row: 2/2;
+  background-color: rgba(228, 209, 209, 0.945);
+  border: solid black 1px;
 }
 
 .infoTitle {
   width: auto;
   max-width: 1000px;
-  justify-content: center;
   text-align: center;
   margin: auto;
   background-color: aliceblue;
   border-radius: 50px 50px 0 0;
 }
 
-.login {
+/* .login {
   width: 100px;
   height: 100px;
   background-image: linear-gradient(135deg, yellow 30%, green 80%);
   border-radius: 120px;
+} */
+
+.slideButtons {
+  margin: auto;
+  text-align: center;
+  padding: 5px 0;
+}
+
+.slideButtons a {
+  width: auto;
+  text-decoration: none;
+  letter-spacing: 10px;
+  color: black;
+}
+
+.info img {
+  max-width: 520px;
+  max-height: 200px;
 }
