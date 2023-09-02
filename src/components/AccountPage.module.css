@@ -1,0 +1,123 @@
+:root {
+  --border-size: 0.5rem;
+  --angle: 0deg;
+}
+
+@property --angle {
+  syntax: "<angle>";
+  initial-value: 0deg;
+  inherits: false;
+}
+
+@keyframes rotate {
+  0% {
+    --angle: 0deg;
+  }
+  100% {
+    --angle: 360deg;
+  }
+}
+
+@keyframes shadowRotate {
+  0% {
+    box-shadow: 0 0 1px 1px white;
+  }
+  /* 25% {
+    box-shadow: 0 0 50px 5px white;
+  } */
+  50% {
+    box-shadow: 0 0 50px 5px white;
+  }
+  100% {
+    box-shadow: 0 0 1px 1px white;
+  }
+}
+
+body {
+  background-color: rgb(26, 25, 25);
+}
+
+.container {
+  position: relative;
+  /* background-color: gray; */
+  /* background-color: rgb(9, 26, 9); */
+  /* background: linear-gradient(
+    to top left,
+    rgb(1, 26, 1) 20%,
+    rgba(4, 248, 4, 0.527) 40%,
+    rgb(1, 26, 1) 50%,
+    rgb(4, 248, 4) 70%,
+    rgb(1, 26, 1) 80%,
+    rgba(4, 248, 4, 0.39) 100%
+  ); */
+  margin: 5% auto;
+  width: fit-content;
+  border: 0.3rem dotted transparent;
+  border-radius: 24px;
+  background-image: linear-gradient(
+      to right,
+      rgb(255 255 255 / 0.5),
+      rgb(255 255 255 / 0.5)
+    ),
+    conic-gradient(
+      from var(--angle),
+      #4b4a4b 0deg 90deg,
+      #707070 90deg 180deg,
+      #4b4a4b 180deg 270deg,
+      #707070 270deg 360deg
+    );
+  background-position: calc(var(--border-size) * -1)
+    calc(var(--border-size) * -1);
+  background-size: calc(var(--border-size) * 2 + 100%)
+    calc(var(--border-size) * 2 + 100%);
+  background-origin: border-box;
+  background-clip: padding-box, border-box;
+  animation: rotate 10s linear infinite, shadowRotate 10s linear infinite;
+}
+
+.container fieldset {
+  margin: 25px;
+  background-color: rgb(51, 49, 49);
+  font-size: 24px;
+  padding: 8px;
+  border-radius: 10px;
+  border: none;
+  color: lime;
+}
+
+.container input {
+  background-color: transparent;
+  color: white;
+}
+
+.container input:focus {
+  outline-width: 0;
+}
+
+.container form {
+  position: relative;
+  padding: 50px;
+  margin-top: -600px;
+  z-index: 10;
+}
+
+.container .form1 {
+  width: 352px;
+  height: 600px;
+  background-color: rgb(10, 61, 10);
+  border-radius: 18px;
+  z-index: 1;
+}
+
+.container .form2 {
+  position: relative;
+  justify-content: center;
+  align-items: center;
+  width: 280px;
+  height: 550px;
+  background-color: rgb(30, 88, 30);
+  z-index: 0;
+  margin: auto;
+  top: 30px;
+  border-radius: 600px / 200px;
+}

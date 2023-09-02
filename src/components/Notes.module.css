@@ -1,11 +1,15 @@
+.background {
+  background-size: contain;
+}
+
 .table_Notes {
   border-collapse: collapse;
-  width: 100%;
+  width: 90%;
   margin: auto;
 }
 
 .table_Notes th {
-  background-color: #f2f2f2;
+  background-color: rgb(83, 83, 83);
   border: 1px solid #ddd;
   padding: 8px;
   text-align: center;
@@ -19,7 +23,7 @@
 }
 
 .table_Title {
-  color: blue;
+  color: green;
   font-weight: bold;
 }
 

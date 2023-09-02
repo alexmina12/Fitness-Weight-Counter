@@ -14,7 +14,7 @@
 
 .table {
   border-collapse: collapse;
-  width: 80%;
+  width: 90%;
   margin: auto;
 }
 
@@ -23,9 +23,10 @@
   padding: 4px;
   text-align: center;
   font-weight: bold;
-  /* border: 1px solid #ddd; */
-  color: blue;
-  background-color: white;
+  border: 1px solid #ddd;
+  color: rgb(79, 190, 79);
+  background-color: gray;
+  margin: auto;
 }
 
 .table th .button {
@@ -50,6 +51,8 @@
   font-size: 14px;
   background-color: transparent;
   text-align: center;
+  color: white;
+  margin-left: 20px;
 }
 
 .buttonRemove {

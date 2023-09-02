@@ -1,10 +1,18 @@
-nav {
+.navigate {
   display: flex;
   flex-direction: row;
   justify-content: space-between;
-  background-color: lightgray;
+  background-color: rgb(83, 83, 83);
   margin: 3% 5%;
   border-radius: 10px;
+}
+
+.main_nav {
+  display: flex;
+}
+
+.main_nav button {
+  margin: 0;
 }
 
 .nav {
@@ -12,18 +20,22 @@ nav {
 }
 
 .nav button {
-  color: red;
+  /* margin: 0 40px; */
+  color: green;
   border: none;
   background-color: transparent;
   padding: 10px;
+  font-weight: bold;
+  width: 200px;
 }
 
 .nav button:hover {
-  color: black;
+  color: lime;
   cursor: pointer;
 }
 
 h1 {
+  position: relative;
   color: rgb(255, 255, 255);
   background-color: rgb(189, 124, 4);
   justify-content: center;
@@ -31,4 +43,17 @@ h1 {
   width: fit-content;
   padding: 0 10px;
   border-radius: 10px;
+  left: 27px;
+}
+
+.login {
+  border-radius: 10px;
+  display: flex;
+  width: 60px;
+  height: 30px;
+  padding: 6px;
+  border: none;
+  background: linear-gradient(151deg, red 0%, orange 50%, yellow 100%);
+  align-items: center;
+  justify-content: center;
 }

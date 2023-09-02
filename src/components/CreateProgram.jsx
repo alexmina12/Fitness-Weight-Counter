@@ -61,7 +61,7 @@ function NewProgram() {
               </td>
               <td>
                 <input
-                  type="text"
+                  type="number"
                   name="NumarSerii"
                   value={rowData.NumarSerii}
                   onChange={(event) => handleChange(index, event)}
@@ -69,7 +69,7 @@ function NewProgram() {
               </td>
               <td>
                 <input
-                  type="text"
+                  type="number"
                   name="NumarRepetari"
                   value={rowData.NumarRepetari}
                   onChange={(event) => handleChange(index, event)}
@@ -77,11 +77,11 @@ function NewProgram() {
               </td>
               <td>
                 <input
-                  type="text"
+                  type="number"
                   name="Greutate"
                   value={rowData.Greutate}
                   onChange={(event) => handleChange(index, event)}
-                />
+                />{" "}
               </td>
               <td className={styles.buttonRemove}>
                 <button
