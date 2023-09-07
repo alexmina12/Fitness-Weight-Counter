@@ -15,7 +15,12 @@ const Layout = () => {
           <h1>Workout Chronicle</h1>
           <Link to="/Account">
             <button className={styles.login} onClick={toggleNav}>
-              Account
+              Sign In
+            </button>
+          </Link>
+          <Link to="/Login">
+            <button className={styles.login} onClick={toggleNav}>
+              Login
             </button>
           </Link>
         </nav>

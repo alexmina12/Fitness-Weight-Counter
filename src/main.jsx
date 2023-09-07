@@ -6,6 +6,8 @@ import "./index.css";
 import HomePage from "./components/HomePage.jsx";
 import PersonalNotes from "./components/Notes.jsx";
 import Account from "./components/AccountPage.jsx";
+import NewProgram from "./components/CreateProgram.jsx";
+import Login from "./components/LogIn.jsx";
 
 const router = createBrowserRouter([
   {
@@ -19,6 +21,14 @@ const router = createBrowserRouter([
   {
     path: "/Account",
     element: <Account />,
+  },
+  {
+    path: "/NewNotes",
+    element: <NewProgram />,
+  },
+  {
+    path: "/Login",
+    element: <Login />,
   },
 ]);
 ReactDOM.createRoot(document.getElementById("root")).render(

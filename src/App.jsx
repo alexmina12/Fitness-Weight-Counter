@@ -5,6 +5,7 @@ import Layout from "./components/NavigationBar.jsx";
 import PersonalNotes from "./components/Notes";
 import NewProgram from "./components/CreateProgram.jsx";
 import Account from "./components/AccountPage";
+import Login from "./components/LogIn";
 
 function App() {
   return (
@@ -15,6 +16,7 @@ function App() {
         <Route path="/Notes" element={<PersonalNotes />} />
         <Route path="/NewNotes" element={<NewProgram />} />
         <Route path="/Account" element={<Account />} />
+        <Route path="/Login" element={<Login />} />
       </Routes>
     </BrowserRouter>
   );

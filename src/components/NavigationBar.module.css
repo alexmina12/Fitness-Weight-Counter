@@ -17,21 +17,24 @@
 
 .nav {
   list-style: none;
+  margin: auto 0;
 }
 
 .nav button {
-  /* margin: 0 40px; */
+  margin: auto 0;
   color: green;
   border: none;
   background-color: transparent;
   padding: 10px;
-  font-weight: bold;
   width: 200px;
+  font-size: 16px;
+  filter: brightness(1.2);
 }
 
 .nav button:hover {
   color: lime;
   cursor: pointer;
+  filter: brightness(3);
 }
 
 h1 {
@@ -43,7 +46,7 @@ h1 {
   width: fit-content;
   padding: 0 10px;
   border-radius: 10px;
-  left: 27px;
+  left: 60px;
 }
 
 .login {

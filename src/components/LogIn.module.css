@@ -34,6 +34,14 @@ body {
   background-color: rgb(26, 25, 25);
 }
 
+a {
+  text-decoration: none;
+}
+
+a:visited {
+  color: white;
+}
+
 .container h1 {
   display: flex;
   top: 20px;
@@ -43,19 +51,12 @@ body {
   z-index: 100;
 }
 
-a {
-  text-decoration: none;
-}
-
-a:visited {
-  color: white;
-}
-
 .container {
   position: absolute;
   left: 50%;
   top: 50%;
   transform: translate(-50%, -50%);
+  height: 600px;
   border: 0.3rem dotted transparent;
   border-radius: 24px;
   background-image: linear-gradient(
@@ -80,19 +81,19 @@ a:visited {
 }
 
 .container fieldset {
-  margin: 25px;
+  margin: 40px auto;
   background-color: rgb(51, 49, 49);
   font-size: 24px;
   padding: 8px;
   border-radius: 10px;
   border: none;
   color: lime;
+  top: 150px;
 }
 
 .container input {
   background-color: transparent;
   color: white;
-  width: 210px;
 }
 
 .container input:focus {
@@ -101,14 +102,13 @@ a:visited {
 
 .container form {
   position: relative;
-  padding: 33px;
-  margin-top: -600px;
+  padding: 50px;
   z-index: 10;
 }
 
 .container .form1 {
   width: 352px;
-  height: 650px;
+  height: 600px;
   background-color: rgb(10, 61, 10);
   border-radius: 18px;
   z-index: 1;
@@ -118,16 +118,16 @@ a:visited {
   position: relative;
   justify-content: center;
   align-items: center;
-  width: 270px;
-  height: 540px;
+  width: 280px;
+  height: 440px;
   background-color: rgb(30, 88, 30);
   z-index: 0;
   margin: auto;
-  top: 80px;
+  top: 100px;
   border-radius: 600px / 200px;
 }
 
-.create {
+.login {
   display: flex;
   background-color: transparent;
   border: none;
