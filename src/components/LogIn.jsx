@@ -1,7 +1,11 @@
 import React, { useState } from "react";
-import styles from "./LogIn.module.css";
+import styles from "./Login.module.css";
+import { useNavigate } from "react-router-dom";
+import { useResponseContext } from "./ResponseContext";
 
 function Login() {
+  const { handleResponse } = useResponseContext();
+  const navigate = useNavigate();
   const [formData, setFormData] = useState({
     email: "",
     password: "",
@@ -27,14 +31,15 @@ function Login() {
         body: JSON.stringify(formData),
       });
 
+      await handleResponse(response);
+
       if (response.ok) {
-        // Autentificarea a reușit
         const data = await response.json();
-        console.log("Răspuns de la server:", data); // Adaugă acest console.log
+        navigate("/");
+        console.log("Răspuns de la server:", data);
       } else {
-        // Autentificarea a eșuat
         const errorData = await response.json();
-        console.error("Eroare la autentificare:", errorData.message); // Adaugă acest console.log
+        console.error("Eroare la autentificare:", errorData.message);
       }
     } catch (error) {
       console.error("Eroare la autentificare:", error);

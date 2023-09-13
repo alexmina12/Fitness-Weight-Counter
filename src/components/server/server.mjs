@@ -1,12 +1,20 @@
 import express from "express";
 import mysql from "mysql2"; //
 import cors from "cors";
+import session from "express-session";
 
 const app = express();
 const port = 1024;
 
 // Middleware pentru gestionarea cererilor CORS
 app.use(cors());
+app.use(
+  session({
+    secret: "secret key",
+    resave: false,
+    saveUninitialized: true,
+  })
+);
 
 // Middleware pentru a interpreta cererile JSON
 app.use(express.json());
@@ -121,6 +129,7 @@ app.post("/Login", async (req, res) => {
 
     if (rows.length > 0) {
       // Utilizatorul a fost găsit, trimite datele relevante sau un mesaj de succes
+
       console.log("Autentificare reușită pentru:", email);
       res.json({
         success: true,

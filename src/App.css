@@ -1,1 +1,27 @@
+body {
+  background-color: black;
+}
 
+.background {
+  position: relative; /* Modificăm la "relative" pentru a poziționa conținutul peste videoclip */
+  width: 100%; /* Lățimea întregului ecran */
+  height: 100vh; /* Înălțimea întregului ecran */
+  overflow: hidden; /* Ascundeți orice conținut în afara div-ului */
+}
+
+/* Stil pentru videoclip */
+video {
+  position: absolute;
+  margin: 8% auto;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  width: 90%; /* Lățimea întregului ecran */
+  height: 70%; /* Înălțimea întregului ecran */
+  object-fit: cover;
+  z-index: -1; /* Așezați videoclipul în spatele conținutului */
+  padding: 65px;
+  background-color: black;
+  border-radius: 150px;
+}
