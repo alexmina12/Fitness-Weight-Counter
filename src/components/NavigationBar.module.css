@@ -3,7 +3,6 @@
   flex-direction: row;
   justify-content: space-between;
   margin: 3% 5%;
-  border-radius: 10px;
 }
 
 .main_nav {
@@ -29,6 +28,8 @@
   font-size: 16px;
   filter: brightness(1.2);
   font-weight: bold;
+  background-color: rgb(12, 12, 12);
+  border-radius: 10px;
 }
 
 .nav button:hover {
@@ -50,7 +51,6 @@ h1 {
   width: fit-content;
   padding: 0 10px;
   border-radius: 10px;
-  left: 60px;
 }
 
 .login,

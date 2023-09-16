@@ -5,23 +5,31 @@ import { useResponseContext } from "./ResponseContext";
 
 const Layout = () => {
   const [showNav, setShowNav] = useState(true);
-  const { isAuthenticated } = useResponseContext();
+  const { isAuthenticated, handleLogOut } = useResponseContext();
   const toggleNav = () => setShowNav(!showNav);
 
   return (
     <>
       <nav className={styles.main_nav}>
         <h1>Workout Chronicle</h1>
-        <Link to="/Account">
-          <button className={styles.register} onClick={toggleNav}>
-            Sign In
+        {isAuthenticated ? (
+          <button className={styles.login} onClick={handleLogOut}>
+            Logout
           </button>
-        </Link>
-        <Link to="/Login">
-          <button className={styles.login} onClick={toggleNav}>
-            Login
-          </button>
-        </Link>
+        ) : (
+          <>
+            <Link to="/Account">
+              <button className={styles.login} onClick={toggleNav}>
+                Register
+              </button>
+            </Link>
+            <Link to="/Login">
+              <button className={styles.login} onClick={toggleNav}>
+                Login
+              </button>
+            </Link>
+          </>
+        )}
       </nav>
 
       <nav className={styles.navigate}>

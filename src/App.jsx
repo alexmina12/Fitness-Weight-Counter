@@ -16,16 +16,17 @@ function App() {
         <BrowserRouter>
           <Layout />
           <div className="background">
-            <Routes>
-              <Route index element={<HomePage />} />
-              <Route path="/Notes" element={<PersonalNotes />} />
-              <Route path="/NewNotes" element={<NewProgram />} />
-              <Route path="/Account" element={<Account />} />
-              <Route path="/Login" element={<Login />} />
-            </Routes>
+            <video src={videoBg} autoPlay muted loop />
           </div>
+          <Routes>
+            <Route index element={<HomePage />} />
+
+            <Route path="/Notes" element={<PersonalNotes />} />
+            <Route path="/NewNotes" element={<NewProgram />} />
+            <Route path="/Account" element={<Account />} />
+            <Route path="/Login" element={<Login />} />
+          </Routes>
         </BrowserRouter>
-        <video src={videoBg} autoPlay muted loop />
       </ResponseProvider>
     </>
   );

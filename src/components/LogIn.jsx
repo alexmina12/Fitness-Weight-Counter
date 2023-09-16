@@ -1,15 +1,17 @@
 import React, { useState } from "react";
 import styles from "./Login.module.css";
 import { useNavigate } from "react-router-dom";
+import axios from "axios";
 import { useResponseContext } from "./ResponseContext";
 
 function Login() {
-  const { handleResponse } = useResponseContext();
-  const navigate = useNavigate();
   const [formData, setFormData] = useState({
     email: "",
     password: "",
   });
+
+  const navigate = useNavigate();
+  const { handleLogIn } = useResponseContext();
 
   const handleChange = (e) => {
     const { name, value } = e.target;
@@ -21,25 +23,18 @@ function Login() {
 
   const handleSubmit = async (e) => {
     e.preventDefault();
-
     try {
-      const response = await fetch("http://localhost:1024/Login", {
-        method: "POST",
-        headers: {
-          "Content-Type": "application/json",
-        },
-        body: JSON.stringify(formData),
+      const response = await axios.post("http://localhost:1024/Login", {
+        email: formData.email,
+        password: formData.password,
       });
 
-      await handleResponse(response);
-
-      if (response.ok) {
-        const data = await response.json();
+      if (response.data.success) {
+        handleLogIn();
         navigate("/");
-        console.log("Răspuns de la server:", data);
+        console.log("Răspuns de la server:", response.data);
       } else {
-        const errorData = await response.json();
-        console.error("Eroare la autentificare:", errorData.message);
+        console.error("Eroare la autentificare:", response.data.message);
       }
     } catch (error) {
       console.error("Eroare la autentificare:", error);

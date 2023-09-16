@@ -1,6 +1,5 @@
-import React, { createContext, useContext, useState } from "react";
+import React, { createContext, useContext, useEffect, useState } from "react";
 
-// Creează contextul
 const ResponseContext = createContext();
 
 export const useResponseContext = () => {
@@ -8,18 +7,37 @@ export const useResponseContext = () => {
 };
 
 export const ResponseProvider = ({ children }) => {
-  const [isAuthenticated, setIsAuthenticated] = useState(false);
+  const [isAuthenticated, setIsAuthenticated] = useState(
+    localStorage.getItem("isLoggedIn") === "true"
+  );
+
+  const handleLogOut = () => {
+    setIsAuthenticated(false);
+    localStorage.setItem("isLoggedIn", "false");
+  };
+
+  const handleLogIn = () => {
+    setIsAuthenticated(true);
+    localStorage.setItem("isLoggedIn", "true");
+  };
 
   const handleResponse = async (response) => {
     if (response.ok) {
-      setIsAuthenticated(true);
+      handleLogIn();
     } else {
       setIsAuthenticated(false);
+      localStorage.setItem("isLoggedIn", "false");
     }
   };
 
+  useEffect(() => {
+    console.log("IsAuthenticated:", isAuthenticated);
+  }, [isAuthenticated]);
+
   return (
-    <ResponseContext.Provider value={{ isAuthenticated, handleResponse }}>
+    <ResponseContext.Provider
+      value={{ isAuthenticated, handleResponse, handleLogIn, handleLogOut }}
+    >
       {children}
     </ResponseContext.Provider>
   );
