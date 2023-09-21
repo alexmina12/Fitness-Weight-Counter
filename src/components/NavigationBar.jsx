@@ -11,7 +11,7 @@ const Layout = () => {
   return (
     <>
       <nav className={styles.main_nav}>
-        <h1>Workout Chronicle</h1>
+        <h1 className={styles.title}>Workout Chronicle</h1>
         {isAuthenticated ? (
           <button className={styles.login} onClick={handleLogOut}>
             Logout

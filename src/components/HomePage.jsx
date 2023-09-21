@@ -1,7 +1,15 @@
 import React from "react";
 import styles from "./HomePage.module.css";
+import { useEffect } from "react";
 
-function HomePage() {
+function HomePage({ toggleVideo }) {
+  useEffect(() => {
+    toggleVideo(true); // Setează starea videoclipului să fie "true" pentru a porni videoclipul
+    return () => {
+      // La dezmontarea componentei HomePage, poți să oprești videoclipul dacă este necesar
+      toggleVideo(false);
+    };
+  }, [toggleVideo]);
   return (
     <>
       <div className={styles.card_main}>

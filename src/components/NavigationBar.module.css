@@ -42,15 +42,15 @@
   border-radius: 50px;
 }
 
-h1 {
-  position: relative;
+.title {
+  position: absolute;
   color: rgb(255, 255, 255);
   background-color: rgb(189, 124, 4);
-  justify-content: center;
   margin: auto;
-  width: fit-content;
   padding: 0 10px;
   border-radius: 10px;
+  left: 50%;
+  transform: translate(-50%);
 }
 
 .login,
@@ -65,4 +65,5 @@ h1 {
   background: linear-gradient(151deg, red 0%, orange 50%, yellow 100%);
   align-items: center;
   justify-content: center;
+  margin: auto;
 }

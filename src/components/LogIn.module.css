@@ -43,7 +43,6 @@ a:visited {
   top: 20px;
   position: absolute;
   justify-content: center;
-  margin-left: -6%;
   z-index: 100;
 }
 
@@ -132,4 +131,16 @@ a:visited {
   background-color: #4b4a4b;
   border-radius: 10px;
   padding: 10px;
+}
+
+.login_title {
+  color: rgb(255, 255, 255);
+  background-color: rgb(189, 124, 4);
+  margin: 0 auto;
+  padding: 0 20px;
+  border-radius: 10px;
+  left: 50%;
+  transform: translate(-50%);
+  max-width: 300px;
+  width: auto;
 }
