@@ -1,6 +1,5 @@
 import React, { useState } from "react";
 import { Link } from "react-router-dom";
-import styles from "./NavigationBar.module.css";
 import { useResponseContext } from "./ResponseContext";
 
 const Layout = () => {
@@ -10,21 +9,32 @@ const Layout = () => {
 
   return (
     <>
-      <nav className={styles.main_nav}>
-        <h1 className={styles.title}>Workout Chronicle</h1>
+      <nav className="flex justify-between bg-black p-2 ">
+        <h1 className="text-white bg-gradient-to-r from-red-500 via-orange-500 to-yellow-500 rounded-lg p-1 mx-auto my-1 text-xl">
+          Workout Chronicle
+        </h1>
         {isAuthenticated ? (
-          <button className={styles.login} onClick={handleLogOut}>
+          <button
+            className="absolute bg-gradient-to-r from-red-600 via-orange-500 to-yellow-500 p-1 rounded-lg right-2"
+            onClick={handleLogOut}
+          >
             Logout
           </button>
         ) : (
           <>
             <Link to="/Account">
-              <button className={styles.login} onClick={toggleNav}>
+              <button
+                className="relative bg-gradient-to-r from-red-500 via-orange-500 to-yellow-500 p-1 rounded-lg"
+                onClick={toggleNav}
+              >
                 Register
               </button>
             </Link>
             <Link to="/Login">
-              <button className={styles.login} onClick={toggleNav}>
+              <button
+                className="relative bg-gradient-to-r from-red-500 via-orange-500 to-yellow-500 p-1 rounded-lg"
+                onClick={toggleNav}
+              >
                 Login
               </button>
             </Link>
@@ -32,39 +42,51 @@ const Layout = () => {
         )}
       </nav>
 
-      <nav className={styles.navigate}>
-        <li className={styles.nav}>
-          <Link to="/">
-            <button>Home</button>
-          </Link>
-        </li>
-        <li className={styles.nav}>
-          <Link to="/About">
-            <button>About</button>
-          </Link>
-        </li>
-        {isAuthenticated && (
-          <>
-            <li className={styles.nav}>
-              <Link to="/Notes">
-                <button>Current Done Workouts</button>
-              </Link>
-            </li>
-            <li className={styles.nav}>
-              <Link to="/NewNotes">
-                <button>Create Workout for Today</button>
-              </Link>
-            </li>
-          </>
-        )}
-        <li className={styles.nav}>
-          <Link to="/Help">
-            <button>Help</button>
-          </Link>
-        </li>
+      <nav className="flex bg-zinc-800 p-1">
+        <ul className="flex w-full justify-around m-auto items-center p-2">
+          <li>
+            <Link to="/">
+              <button className="text-green-500 bg-zinc-900 p-2 w-40 text-lg font-light rounded-lg filter brightness-110 hover:text-lime-500 cursor-pointer hover:filter brightness-300 hover:font-bold hover:letter-spacing-1 hover:bg-gray-900 hover:rounded-full">
+                Home
+              </button>
+            </Link>
+          </li>
+          <li>
+            <Link to="/About">
+              <button className="text-green-500 bg-zinc-900 p-2 w-40 text-lg font-light rounded-lg filter brightness-110 hover:text-lime-500 cursor-pointer hover:filter brightness-300 hover:font-bold hover:letter-spacing-1 hover:bg-gray-900 hover:rounded-full">
+                About
+              </button>
+            </Link>
+          </li>
+          {isAuthenticated && (
+            <>
+              <li>
+                <Link to="/Notes">
+                  <button className="text-green-500 bg-zinc-900 p-2 w-40 text-lg font-light rounded-lg filter brightness-110 hover:text-lime-500 cursor-pointer hover:filter brightness-300 hover:font-bold hover:letter-spacing-1 hover:bg-gray-900 hover:rounded-full">
+                    Current Done Workouts
+                  </button>
+                </Link>
+              </li>
+              <li>
+                <Link to="/NewNotes">
+                  <button className="text-green-500 bg-zinc-900 p-2 w-40 text-lg font-light rounded-lg filter brightness-110 hover:text-lime-500 cursor-pointer hover:filter brightness-300 hover:font-bold hover:letter-spacing-1 hover:bg-gray-900 hover:rounded-full">
+                    Create Workout for Today
+                  </button>
+                </Link>
+              </li>
+            </>
+          )}
+          <li>
+            <Link to="/Help">
+              <button className="text-green-500 bg-zinc-900 p-2 w-40 text-lg font-light rounded-lg filter brightness-110 hover:text-lime-500 cursor-pointer hover:filter brightness-300 hover:font-bold hover:letter-spacing-1 hover:bg-gray-900 hover:rounded-full">
+                Help
+              </button>
+            </Link>
+          </li>
+        </ul>
       </nav>
 
-      <div className={styles.content}></div>
+      <div className="content"></div>
     </>
   );
 };
