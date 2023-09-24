@@ -8,16 +8,19 @@ function Login() {
     email: "",
     password: "",
   });
+  const [isEmailValid, setIsEmailValid] = useState(false);
 
   const navigate = useNavigate();
   const { handleLogIn } = useResponseContext();
 
   const handleChange = (e) => {
     const { name, value } = e.target;
-    setFormData({
-      ...formData,
-      [name]: value,
-    });
+    setFormData({ ...formData, [name]: value });
+
+    // Verifică dacă adresa de email este validă
+    const emailPattern = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+    const isValid = emailPattern.test(value);
+    setIsEmailValid(isValid);
   };
 
   const handleSubmit = async (e) => {
@@ -41,15 +44,20 @@ function Login() {
   };
 
   return (
-    <div className="container">
-      <h1 className="login_title">
-        <a href="/">Workout Chronicle</a>
+    <div className="w-96 rounded-xl overflow-hidden bg-zinc-800 bg-opacity-80 text-white m-auto mt-[15%]">
+      <h1>
+        <a
+          className="flex justify-center text-3xl text-white p-8 bg-gradient-to-r from-red-500 via-orange-500 to-yellow-500"
+          href="/"
+        >
+          Workout Chronicle
+        </a>
       </h1>
-      <div className="form1">
-        <div className="form2">
-          <form onSubmit={handleSubmit}>
-            <fieldset className="mt-10">
-              <label className="text-white">Email:</label>
+      <div>
+        <div>
+          <form className="mx-[5%]" onSubmit={handleSubmit}>
+            <fieldset className="mt-8">
+              <label className="text-white m-[5%]">Email:</label>
               <br />
               <input
                 type="email"
@@ -57,11 +65,13 @@ function Login() {
                 value={formData.email}
                 onChange={handleChange}
                 required
-                className="bg-transparent text-white"
+                className={`bg-transparent border-b outline-none ${
+                  isEmailValid ? "border-green-600" : "border-red-600 "
+                } text-white w-[90%] m-[5%]`}
               />
             </fieldset>
-            <fieldset className="mt-10">
-              <label className="text-white">Password:</label>
+            <fieldset className="mt-2">
+              <label className="text-white m-[5%]">Password:</label>
               <br />
               <input
                 type="password"
@@ -69,12 +79,12 @@ function Login() {
                 value={formData.password}
                 onChange={handleChange}
                 required
-                className="bg-transparent text-white"
+                className="bg-transparent border-b outline-none border-red-600 text-white w-[90%] m-[5%]"
               />
             </fieldset>
             <button
               type="submit"
-              className="login bg-blue-500 text-white mt-10"
+              className="login bg-blue-500 text-white w-[90%] mx-[5%] mt-[15%] mb-[5%]"
             >
               Login
             </button>

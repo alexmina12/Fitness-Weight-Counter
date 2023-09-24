@@ -24,7 +24,7 @@ const Layout = () => {
           <>
             <Link to="/Account">
               <button
-                className="relative bg-gradient-to-r from-red-500 via-orange-500 to-yellow-500 p-1 rounded-lg"
+                className="absolute bg-gradient-to-r from-red-500 via-orange-500 to-yellow-500 p-1 rounded-lg right-16"
                 onClick={toggleNav}
               >
                 Register
@@ -32,7 +32,7 @@ const Layout = () => {
             </Link>
             <Link to="/Login">
               <button
-                className="relative bg-gradient-to-r from-red-500 via-orange-500 to-yellow-500 p-1 rounded-lg"
+                className="absolute bg-gradient-to-r from-red-500 via-orange-500 to-yellow-500 p-1 rounded-lg right-2"
                 onClick={toggleNav}
               >
                 Login
