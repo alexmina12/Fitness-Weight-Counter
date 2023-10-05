@@ -3,7 +3,7 @@ import React from "react";
 function PersonalNotes() {
   return (
     <>
-      <table className="border-collapse w-90 mx-auto text-cyan">
+      <table className="relative border-collapse w-90 text-cyan left-0 top-[90px]">
         <tbody>
           <tr className="bg-gray-400">
             <th className="bg-gray-700 border border-gray-400 p-2 text-center w-1/4">

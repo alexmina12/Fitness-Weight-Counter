@@ -42,3 +42,23 @@ export const ResponseProvider = ({ children }) => {
     </ResponseContext.Provider>
   );
 };
+
+const SidebarContext = createContext();
+
+export function useSidebar() {
+  return useContext(SidebarContext);
+}
+
+export function SidebarProvider({ children }) {
+  const [isSidebarOpen, setIsSidebarOpen] = useState(false);
+
+  const toggleSidebar = () => {
+    setIsSidebarOpen(!isSidebarOpen);
+  };
+
+  return (
+    <SidebarContext.Provider value={{ isSidebarOpen, toggleSidebar }}>
+      {children}
+    </SidebarContext.Provider>
+  );
+}

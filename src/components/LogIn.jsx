@@ -17,7 +17,6 @@ function Login() {
     const { name, value } = e.target;
     setFormData({ ...formData, [name]: value });
 
-    // Verifică dacă adresa de email este validă
     const emailPattern = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
     const isValid = emailPattern.test(value);
     setIsEmailValid(isValid);
