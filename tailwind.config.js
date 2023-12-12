@@ -19,7 +19,13 @@ module.exports = {
       "4xl": "2.441rem",
       "5xl": "3.052rem",
     },
-    extend: {},
+    extend: {
+      colors: {
+        "purple-light": "#492b7c",
+        "darker-purple": "#090212",
+        "dark-purple": "#0f041f",
+      },
+    },
   },
   plugins: [],
 };

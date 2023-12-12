@@ -6,7 +6,6 @@ import session from "express-session";
 const app = express();
 const port = 1024;
 
-// Middleware pentru gestionarea cererilor CORS
 app.use(cors());
 app.use(
   session({
@@ -16,15 +15,29 @@ app.use(
   })
 );
 
-// Middleware pentru a interpreta cererile JSON
 app.use(express.json());
 
-// Conexiunea cu baza de date MySQL
 const pool = mysql.createPool({
   host: "localhost",
   user: "root",
   password: "12345",
   database: "users",
+});
+
+app.post("/NewNotes", async (req, res) => {
+  try {
+    const { exerciseName, rowsData } = req.body;
+
+    const [result] = await db.query(
+      "INSERT INTO nume_tabel (exerciseName, rowsData) VALUES (?, ?)",
+      [exerciseName, JSON.stringify(rowsData)]
+    );
+
+    res.json({ message: "Tabel creat cu succes" });
+  } catch (error) {
+    console.error(error);
+    res.status(500).json({ error: "Eroare la crearea tabelului" });
+  }
 });
 
 app.post("/Account", (req, res) => {
@@ -120,7 +133,7 @@ app.post("/Login", async (req, res) => {
   const { email, password } = req.body;
 
   try {
-    const connection = await pool.promise(); // Utilizarea promiselor pentru mysql2
+    const connection = await pool.promise();
 
     const [rows] = await connection.query(
       "SELECT Email, Password FROM all_users WHERE Email = ? AND Password = ?",
@@ -128,16 +141,13 @@ app.post("/Login", async (req, res) => {
     );
 
     if (rows.length > 0) {
-      // Utilizatorul a fost găsit, trimite datele relevante sau un mesaj de succes
-
       console.log("Autentificare reușită pentru:", email);
       res.json({
         success: true,
         message: "Autentificare reușită!",
-        user: rows[0], // Trimite detalii despre utilizator
+        user: rows[0],
       });
     } else {
-      // Utilizatorul nu a fost găsit
       console.log("Autentificare eșuată pentru:", email);
       res.status(401).json({
         success: false,
